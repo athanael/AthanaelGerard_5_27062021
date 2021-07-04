@@ -8,6 +8,7 @@
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -38,7 +39,7 @@ header a:nth-child(2) {
 
 /* Container */
 
-.container {
+#container {
   height: calc(100vh - 80px);
   padding: 50px;
   display: flex;
@@ -46,7 +47,7 @@ header a:nth-child(2) {
   justify-content: center;
 }
 
-.card-link {
+#card-link {
   margin: 20px 20px;
 }
 
@@ -79,7 +80,7 @@ header a:nth-child(2) {
   margin-bottom: 10px;
 }
 
-.description {
+#description {
   text-align: justify;
   font-size: 1rem;
 }
@@ -88,7 +89,7 @@ header a:nth-child(2) {
   header {
     margin-bottom: 30px;
   }
-  .container {
+  #container {
     padding: 0;
   }
   .card {
@@ -98,7 +99,7 @@ header a:nth-child(2) {
   .img-container {
     height: 65%;
   }
-  .card-link {
+  #card-link {
     margin: 30px 0;
   }
 }
