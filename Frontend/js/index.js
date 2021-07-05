@@ -17,8 +17,14 @@ function getCards() {
     })
     .catch(function (error) {
       console.error(error);
-      alert(error);
+      displayError(error);
     });
+}
+
+function displayError(error) {
+  console.log("OKKKKK");
+  const displayElt = (document.getElementById("error-text").innerText =
+    "Erreur :" + error);
 }
 
 function displayCards(card) {

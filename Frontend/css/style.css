@@ -39,6 +39,13 @@ header a:nth-child(2) {
 
 /* Container */
 
+#error-text {
+  color: red;
+  font-weight: 700;
+  font-size: 3rem;
+  align-self: center;
+}
+
 #container {
   height: calc(100vh - 80px);
   padding: 50px;
