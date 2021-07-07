@@ -34,9 +34,10 @@ function displayCards(card) {
 
   cloneElt.getElementById("card-image").src = card.imageUrl;
   cloneElt.getElementById("title").textContent = card.name;
-  cloneElt.getElementById("price").textContent = price + ".00€";
+  cloneElt.getElementById("price").textContent = price + "€";
   cloneElt.getElementById("description").textContent = card.description;
-  cloneElt.getElementById("card-link").href = "/product.html&id=" + card._id;
+  cloneElt.getElementById("card-link").href =
+    "Frontend/html/product.html?id=" + card._id;
 
   document.getElementById("container").appendChild(cloneElt);
 }

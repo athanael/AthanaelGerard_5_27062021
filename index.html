@@ -24,10 +24,10 @@
         <a href="index.html" title="Page d'accueil"><img src="./Frontend/imgs/logo.png" alt="Logo" /></a>
         <a href="#" title="Mon panier"><i class="fas fa-shopping-cart" id="cart"></i></a>
     </header>
-    <div id="container">
-        <p id="error-text"></p>
-        <template id="card-template">
-            <a href="#" id="card-link">
+    <p id="error-text"></p>
+    <template id="card-template">
+        <li>
+            <a href="./Frontend/html/product.html" id="card-link">
                 <div class="card product-card">
                     <div class="img-container">
                         <img src="./Frontend/imgs/meuble-tv-la-bresse.jpeg" alt="Meuble" id="card-image">
@@ -40,8 +40,10 @@
                     <p id="description"></p>
                 </div>
             </a>
-        </template>
-    </div>
+        </li>
+    </template>
+    <ul id="container">
+    </ul>
     <script src="./Frontend/js/index.js"></script>
 </body>
 
