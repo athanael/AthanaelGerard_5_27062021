@@ -22,7 +22,6 @@ function getCards() {
 }
 
 function displayError(error) {
-  console.log("OKKKKK");
   const displayElt = (document.getElementById("error-text").innerText =
     "Erreur :" + error);
 }
