@@ -20,12 +20,12 @@
         <div class="product-container">
             <div class="flex-product-container">
                 <div class="pic-container">
-                    <img src="" alt="Photo du produit" id="img">
+                    <img src="#" alt="Photo du produit" id="img">
                 </div>
                 <div class="info-container">
                     <div class="title-container">
-                        <h2 id="product-name"></h2>
-                        <h2 id="product-price"></h2>
+                        <h2 id="product-name" class="hidden">Nom de l'article</h2>
+                        <h2 id="product-price" class="hidden">Prix de l'article</h2>
                     </div>
                     <div class="description-container">
                         <p id="product-description"></p>
@@ -35,6 +35,26 @@
             <div class="flex-confirmation-container">
                 <div class="confirmation-text">
                     <h2>Voulez vous commander ce produit ?</h2>
+                </div>
+                <div class="quantity-and-vernis">
+                    <div class="quantity">
+                        <label for="quantity">Quantité:</label>
+                        <input type="number" id="quantity" min="1" />
+                    </div>
+                    <div class="vernis">
+                        <label for="vernis">Vernis:</label>
+                        <template id="vernis-template">
+                            <option value="" id="option">#</option>
+                        </template>
+                        <select name="vernis" id="vernis">
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <p id="text-error-quantity" class="hidden">Merci de rentrer une quantité valide</p>
+                </div>
+                <div>
+                    <p id="text-validation" class="hidden">Article ajouté au panier</p>
                 </div>
                 <button id="buy-button">Acheter</button>
             </div>
