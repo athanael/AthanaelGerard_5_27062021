@@ -2,14 +2,22 @@ main();
 
 async function main() {
   const id = getId();
+  let firstTime = true;
+  if (
+    localStorage.getItem("cart-article") ||
+    localStorage.getItem("cart-quantity")
+  ) {
+    firstTime = false;
+  }
   const currentProduct = await verifyProduct(id);
   displayProduct(currentProduct);
   document.getElementById("buy-button").addEventListener("click", function (e) {
-    getQuantityAndVernis(currentProduct);
+    getQuantityAndVernis(currentProduct, firstTime);
+    firstTime = false;
   });
 }
 
-function getQuantityAndVernis(currentProduct) {
+function getQuantityAndVernis(currentProduct, isFirstTime) {
   document.getElementById("text-error-quantity").classList.add("hidden");
   document.getElementById("text-validation").classList.add("hidden");
   const vernis = document.getElementById("vernis").value;
@@ -25,15 +33,23 @@ function getQuantityAndVernis(currentProduct) {
     if (localStorage.getItem("cart-article") == null) {
       localStorage.setItem("cart-article", "");
     }
-    const storageArticle = [
-      localStorage.getItem("cart-article") + JSON.stringify(currentProduct),
-    ];
+    if (isFirstTime == true) {
+      storageArticle =
+        "[" +
+        localStorage.getItem("cart-article") +
+        JSON.stringify(currentProduct);
+    } else {
+      storageArticle =
+        localStorage.getItem("cart-article") +
+        "," +
+        JSON.stringify(currentProduct);
+    }
     localStorage.setItem("cart-article", storageArticle);
+    isFirstTime = false;
     const storageQuantity = (quantity += parseInt(
       localStorage.getItem("cart-quantity")
     ));
     localStorage.setItem("cart-quantity", quantity);
-    document.getElementById("text-error-quantity").textContent = "";
     document.getElementById("text-validation").classList.remove("hidden");
   }
 }

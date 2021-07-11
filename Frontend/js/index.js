@@ -1,5 +1,4 @@
 main();
-
 async function main() {
   const cards = await getCards();
   for (card of cards) {
@@ -22,8 +21,8 @@ function getCards() {
 }
 
 function displayError(error) {
-  const displayElt = (document.getElementById("error-text").innerText =
-    "Erreur :" + error);
+  const displayElt = (document.getElementById("error-text").textContent =
+    "Erreur :" + error + " Veuillez vérifier votre connexion internet");
 }
 
 function displayCards(card) {
