@@ -2,49 +2,67 @@
 <html lang="fr">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Links -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cart.css">
+    <!-- Font awesome link -->
     <script src="https://kit.fontawesome.com/381f09ad0b.js" crossorigin="anonymous"></script>
+    <!-- Title -->
     <title>Orimeuble | Mon panier</title>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <a href="../../index.html" title="Page d'accueil"><img src="../imgs/logo.png" alt="Logo" /></a>
         <a href="./cart.html" title="Mon panier"><i class="fas fa-shopping-cart" id="cart"></i></a>
     </header>
+    <!-- Big container -->
     <div class="cart-container" id="cart-container">
         <h1>Mon panier</h1>
-        <div class="products-cart-container">
+        <div id="products-cart-container">
+            <!-- Summary of cart -->
             <div class="summary">
                 <h2 class="summary-text">Produit</h2>
-                <h2 class="summary-text">Vernis</h2>
                 <h2 class="summary-text">Quantité</h2>
                 <h2 class="summary-text">Prix</h2>
             </div>
-            <template class="product-cart-container">
-                <div class="pic-and-title-container">
-                    <div class="pic-cart-container">
-                        <img src="../imgs/meuble-tv-la-bresse.jpeg" alt="">
+            <!-- Template to clone -->
+            <template id="product-cart-container">
+                <div class="all-containers-container">
+                    <div class="pic-and-title-container">
+                        <div class="pic-cart-container">
+                            <img src="../imgs/meuble-tv-la-bresse.jpeg" alt="" id="img-cart">
+                        </div>
+                        <h2 id="cart-product-name">Meuble de la bresse</h2>
                     </div>
-                    <h2 id="cart-product-name">Meuble de la bresse</h2>
-                </div>
-                <div class="varnish-cart-container">
-                    <h2 id="cart-varnish-name">Test de vernis</h2>
-                </div>
-                <div class="quantity-cart-container">
-                    <h2 id="cart-quantity">20</h2>
-                </div>
-                <div class="price-cart-container">
-                    <h2 id="cart-price">200€</h2>
+                    <div class="quantity-cart-container">
+                        <h2 id="cart-quantity">20</h2>
+                    </div>
+                    <div class="price-cart-container">
+                        <h2 id="cart-price">200€</h2>
+                    </div>
                 </div>
             </template>
         </div>
-        <button id="empty-button">Vider le panier</button>
+        <!-- Total price -->
+        <div class="total">
+            <div class="total-container">
+                <h2>Total :</h2>
+                <h2 id="total-price">#</h2>
+            </div>
+            <button id="order-button" class="white-button">Commander</button>
+        </div>
+        <div id="big-container">
+        </div>
+
+        <button id="empty-button" class="white-button">Vider le panier</button>
     </div>
+    <!-- If cart is empty -->
     <h2 id="empty-cart" class="hidden">Votre panier est vide, <a href="../../index.html">Remplissez le</a></h2>
     <script src="../js/cart.js"></script>
 </body>

@@ -1,3 +1,5 @@
+/* Container */
+
 .hidden {
   display: none;
 }
@@ -123,6 +125,8 @@ label {
   border-radius: 10px;
   border: 2px solid black;
 }
+
+/* Media queries */
 
 @media only screen and (max-width: 1000px) {
   .info-container {

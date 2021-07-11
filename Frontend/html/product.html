@@ -2,26 +2,36 @@
 <html lang="fr">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Links -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product.css">
+    <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/381f09ad0b.js" crossorigin="anonymous"></script>
+    <!-- Title -->
     <title>Orimeuble | Page produit</title>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <a href="../../index.html" title="Page d'accueil"><img src="../imgs/logo.png" alt="Logo" /></a>
         <a href="./cart.html" title="Mon panier"><i class="fas fa-shopping-cart" id="cart"></i></a>
     </header>
+    <!-- Big container -->
     <div class="center-container">
+        <!-- Centered container -->
         <div class="product-container">
+            <!-- Left container (for product) -->
             <div class="flex-product-container">
+                <!-- Pic place -->
                 <div class="pic-container">
                     <img src="#" alt="Photo du produit" id="img">
                 </div>
+                <!-- Title, price and description container -->
                 <div class="info-container">
                     <div class="title-container">
                         <h2 id="product-name" class="hidden">Nom de l'article</h2>
@@ -32,6 +42,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Right Container -->
             <div class="flex-confirmation-container">
                 <div class="confirmation-text">
                     <h2>Voulez vous commander ce produit ?</h2>
@@ -50,9 +61,11 @@
                         </select>
                     </div>
                 </div>
+                <!-- Text of error in order because  quantity <= 0 or no quantity -->
                 <div>
                     <p id="text-error-quantity" class="hidden">Merci de rentrer une quantité valide</p>
                 </div>
+                <!-- Text of validation of order -->
                 <div>
                     <p id="text-validation" class="hidden">Article ajouté au panier</p>
                 </div>

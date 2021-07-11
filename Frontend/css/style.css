@@ -50,7 +50,7 @@ header a:nth-child(2) {
 #container {
   padding: 50px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 330px);
+  grid-template-columns: repeat(auto-fill, 320px);
   justify-content: center;
   grid-gap: 70px;
 }
@@ -92,6 +92,8 @@ li {
   text-align: justify;
   font-size: 1rem;
 }
+
+/* Media queries */
 
 @media only screen and (max-width: 450px) {
   #container {
