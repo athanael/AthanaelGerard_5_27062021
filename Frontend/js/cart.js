@@ -1,8 +1,9 @@
-// calling main function
+// reload page
 function reload() {
   document.location.reload();
 }
 
+// calling main function
 main();
 
 // function async because we need to wait to have findNames execution
