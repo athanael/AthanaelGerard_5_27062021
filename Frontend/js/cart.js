@@ -1,17 +1,17 @@
 // reload page
-function reload() {
-  document.location.reload();
-}
+document
+  .getElementById("empty-button")
+  .addEventListener("click", function reload() {
+    document.location.reload();
+    localStorage.removeItem("cart-article");
+  });
+
+import { datas } from "./cards.js";
 
 // calling main function
 main();
 
-// function async because we need to wait to have findNames execution
-async function main() {
-  // if user click on empty-button, remove cart information of localstorage
-  document.getElementById("empty-button").addEventListener("click", () => {
-    localStorage.removeItem("cart-article");
-  });
+function main() {
   // transform localStorage datas in JSON array
   const products = getProducts();
   // if we don't have nothing in cart, stop the execution by returning
@@ -19,7 +19,7 @@ async function main() {
     return null;
   }
   // create a tab with name of every API product and their quantity in cart
-  const names = await findNames();
+  const names = findNames(datas);
   // remove multiple same articles
   sortTab(products, names);
 }
@@ -27,26 +27,26 @@ async function main() {
 async function sortTab(product, tabNames) {
   const quantityTab = [];
   // putting right cart quantity in tabNames array
-  for (i = 0; i < tabNames.length; i++) {
-    for (j = 0; j < product.length; j++) {
+  for (let i = 0; i < tabNames.length; i++) {
+    for (let j = 0; j < product.length; j++) {
       if (product[j].name == tabNames[i]) {
         tabNames[i + 1] += product[j].quantity;
       }
     }
   }
   // create a new array who take quantity of each articles in cart in tabNames array
-  for (i = 1; i < tabNames.length; i += 2) {
+  for (let i = 1; i < tabNames.length; i += 2) {
     quantityTab.push(tabNames[i]);
   }
   // getting apiproducts
-  const apiProducts = await findProducts();
+  const apiProducts = datas;
   // display them in html
   displayProductsInCart(apiProducts, quantityTab);
 }
 
 function displayProductsInCart(apiProducts, quantityTab) {
   let totalPrice = 0;
-  for (i = 0; i != apiProducts.length; i++) {
+  for (let i = 0; i != apiProducts.length; i++) {
     // if quantity = 0 skip the product
     if (quantityTab[i] == 0) {
     } else {
@@ -67,43 +67,13 @@ function displayProductsInCart(apiProducts, quantityTab) {
   }
 }
 
-function findNames() {
+function findNames(datas) {
   let names = [];
-  // get API products info
-  return fetch("http://localhost:3000/api/furniture")
-    .then(function (response) {
-      // transform them into JSON
-      return response.json();
-    })
-    .then(function (datas) {
-      // push on tab names the name of product and the quantity at 0
-      for (data of datas) {
-        names.push(data.name, (data.qty = 0));
-      }
-      // returning tab
-      return names;
-    })
-    .catch(function (error) {
-      // display error in console
-      console.error(error);
-    });
-}
-
-function findProducts() {
-  // get API products info
-  return fetch("http://localhost:3000/api/furniture")
-    .then(function (response) {
-      // transform them into JSON
-      return response.json();
-    })
-    .then(function (datas) {
-      // return JSON datas
-      return datas;
-    })
-    .catch(function (error) {
-      // display error in console
-      console.error(error);
-    });
+  // push on tab names the name of product and the quantity at 0
+  for (let data of datas) {
+    names.push(data.name, (data.qty = 0));
+  }
+  return names;
 }
 
 function getProducts() {

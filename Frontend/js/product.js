@@ -1,8 +1,9 @@
 // get in main function
 main();
 
-// function async because we need to wait to have verifyProduct execution
-async function main() {
+import { datas } from "./cards.js";
+
+function main() {
   // get id info from the URL
   const id = getId();
   // var to check if its the first time that user order something
@@ -12,7 +13,7 @@ async function main() {
     firstTime = false;
   }
   // verify what product to display with id
-  const currentProduct = await verifyProduct(id);
+  const currentProduct = verifyProduct(datas, id);
   // display product
   displayProduct(currentProduct);
   document.getElementById("buy-button").addEventListener("click", function (e) {
@@ -23,6 +24,7 @@ async function main() {
 
 function getQuantityAndVernis(currentProduct, isFirstTime) {
   // hide validation and error order text
+  let storageArticle;
   document.getElementById("text-error-quantity").classList.add("hidden");
   document.getElementById("text-validation").classList.add("hidden");
   // put varnish value in vernis html
@@ -60,25 +62,13 @@ function getQuantityAndVernis(currentProduct, isFirstTime) {
   }
 }
 
-function verifyProduct(idToVerify) {
-  // get API data
-  return fetch("http://localhost:3000/api/furniture")
-    .then(function (response) {
-      // transform API data into JSON
-      return response.json();
-    })
-    .then(function (data) {
-      // check all the products of the api if the id is the same that in the URL return the good product
-      for (let i = 0; i < data.length; i++) {
-        if (data[i]._id == idToVerify) {
-          return data[i];
-        }
-      }
-    })
-    .catch(function (error) {
-      // display error in console
-      console.error(error);
-    });
+function verifyProduct(data, idToVerify) {
+  // check all the products of the api if the id is the same that in the URL return the good product
+  for (let i = 0; i < data.length; i++) {
+    if (data[i]._id == idToVerify) {
+      return data[i];
+    }
+  }
 }
 
 function getId() {
@@ -100,7 +90,7 @@ function displayProduct(product) {
 }
 
 function displayVernis(product) {
-  for (i = 0; i < product.length; i++) {
+  for (let i = 0; i < product.length; i++) {
     // create as options for select as varnish are alvailable
     const containerElt = document.getElementById("vernis-template");
     const cloneElt = document.importNode(containerElt.content, true);

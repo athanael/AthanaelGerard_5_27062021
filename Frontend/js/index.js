@@ -1,38 +1,15 @@
 // calling main function
 main();
 
-// function async because we need to wait to have getCards execution
-async function main() {
+import { datas } from "./cards.js";
+
+function main() {
   // cards contain all API products
-  const cards = await getCards();
-  for (card of cards) {
+  const cards = datas;
+  for (let card of cards) {
     // display every API product on page
     displayCards(card);
   }
-}
-
-function getCards() {
-  // doing the fetch to get data from api URL
-  return fetch("http://localhost:3000/api/furniture")
-    .then(function (response) {
-      // transform what i recieve in JSON
-      return response.json();
-    })
-    .then(function (data) {
-      // returning JSON datas
-      return data;
-    })
-    .catch(function (error) {
-      // display on site and on console error
-      console.error(error);
-      displayError(error);
-    });
-}
-
-function displayError(error) {
-  // display error on website
-  const displayElt = (document.getElementById("error-text").textContent =
-    "Erreur :" + error + " Veuillez vérifier votre connexion internet");
 }
 
 function displayCards(card) {

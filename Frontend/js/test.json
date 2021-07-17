@@ -1,0 +1,10 @@
+{
+  "contact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "1 rue ces accacias",
+    "city": "montquq",
+    "email": "johndoe@montquq.com"
+  },
+  "products": []
+}
