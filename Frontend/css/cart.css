@@ -1,5 +1,22 @@
 /* Container */
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.summary,
+.all-containers-container {
+  background-color: white;
+}
+
+.summary {
+  margin-bottom: 10px;
+}
+
+#cart-product-name {
+  text-align: center;
+}
+
 .cart-container {
   width: 90%;
   display: flex;
@@ -28,7 +45,7 @@
 
 .all-containers-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 30px;
 }
@@ -122,10 +139,58 @@
 
 .error-form-text {
   color: red;
+  text-align: center;
 }
 
 #firstName,
 #lastName,
 #city {
   text-transform: capitalize;
+}
+
+#underline {
+  text-decoration: underline;
+}
+
+#underline:hover {
+  text-decoration: none;
+}
+
+.form-element {
+  height: fit-content;
+  padding: 20px 0;
+  width: 300px;
+  max-width: 300px;
+}
+
+input {
+  height: 40px;
+  border-radius: 100px;
+  padding: 20px;
+  width: 300px;
+  max-width: 300px;
+}
+
+.form-container {
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .cart-container {
+    width: 100%;
+  }
+  .summary-text,
+  .pic-and-title-container,
+  .quantity-cart-container,
+  .price-cart-container {
+    padding: 0 10px;
+    font-size: 15px;
+  }
+  .pic-cart-container {
+    height: 50px;
+    width: 50px;
+  }
+  #cart-product-name {
+    font-size: 15px;
+  }
 }

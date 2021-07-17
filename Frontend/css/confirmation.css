@@ -13,10 +13,19 @@ main h1 {
 
 main h1,
 main h2 {
+  font-weight: 400;
   width: 50%;
   text-align: center;
 }
 
 strong {
   font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  main h1,
+  main h2 {
+    width: 90%;
+    text-align: justify;
+  }
 }

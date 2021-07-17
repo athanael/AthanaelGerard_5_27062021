@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -24,6 +25,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0 35px;
+}
+
+body {
+  background-color: #f0d6e9;
 }
 
 header a img {
@@ -60,7 +65,7 @@ li {
 }
 
 .card {
-  height: 500px;
+  height: 600px;
   width: 350px;
   background-color: #f3e8f0;
   padding: 10px;
@@ -68,7 +73,7 @@ li {
 }
 
 .img-container {
-  height: 70%;
+  height: 60%;
   width: 100%;
   display: flex;
   flex-direction: column;
