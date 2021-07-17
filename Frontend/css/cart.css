@@ -105,3 +105,27 @@
 .total button {
   width: 100%;
 }
+
+.form-container {
+  align-self: center;
+}
+
+.form-container,
+.form-element {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  text-align: center;
+}
+
+.error-form-text {
+  color: red;
+}
+
+#firstName,
+#lastName,
+#city {
+  text-transform: capitalize;
+}

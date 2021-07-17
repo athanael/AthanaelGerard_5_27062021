@@ -1,6 +1,7 @@
 // calling main function
 main();
 
+// importing API datas from cards.js file
 import { datas } from "./cards.js";
 
 function main() {

@@ -6,6 +6,7 @@ document
     localStorage.removeItem("cart-article");
   });
 
+// importing API datas from cards.js file
 import { datas } from "./cards.js";
 
 // calling main function
@@ -53,6 +54,7 @@ function displayProductsInCart(apiProducts, quantityTab) {
       // get contextual info and display them
       let price = (apiProducts[i].price / 100) * quantityTab[i] + "€";
       totalPrice += parseInt(price);
+      localStorage.setItem("total-price", totalPrice);
       const templateElt = document.getElementById("product-cart-container");
       const cloneElt = document.importNode(templateElt.content, true);
       cloneElt.getElementById("img-cart").src = apiProducts[i].imageUrl;

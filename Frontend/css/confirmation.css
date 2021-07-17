@@ -1,0 +1,22 @@
+main {
+  background: #f0d6e9;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+main h1 {
+  margin: 50px 0;
+}
+
+main h1,
+main h2 {
+  width: 50%;
+  text-align: center;
+}
+
+strong {
+  font-weight: 700;
+}

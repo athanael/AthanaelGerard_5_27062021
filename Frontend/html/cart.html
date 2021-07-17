@@ -50,6 +50,33 @@
             </template>
         </div>
         <!-- Total price -->
+        <div class="form-container">
+            <div class="firstName-Form form-element">
+                <label for="firstName">Entrez votre prénom: </label>
+                <input type="text" name="firstName" id="firstName" placeholder="John" required>
+                <p id="error-firstname" class="error-form-text hidden">#</p>
+            </div>
+            <div class="lastName-Form form-element">
+                <label for="lastName">Entrez votre nom: </label>
+                <input type="text" name="lastName" id="lastName" placeholder="Doe" required>
+                <p id="error-lastname" class="error-form-text hidden">#</p>
+            </div>
+            <div class="address-Form form-element">
+                <label for="address">Entrez votre addresse: </label>
+                <input type="text" name="address" id="address" placeholder="10 rue des chouquettes" required>
+                <p id="error-address" class="error-form-text hidden">#</p>
+            </div>
+            <div class="city-Form form-element">
+                <label for="city">Entrez votre ville: </label>
+                <input type="text" name="city" id="city" placeholder="Paris" required>
+                <p id="error-city" class="error-form-text hidden">#</p>
+            </div>
+            <div class="city-Form form-element">
+                <label for="email">Entrez votre email: </label>
+                <input type="email" name="email" id="email" placeholder="Johndoe@example.com" required>
+                <p id="error-email" class="error-form-text hidden">#</p>
+            </div>
+        </div>
         <div class="total">
             <div class="total-container">
                 <h2>Total :</h2>
@@ -57,14 +84,13 @@
             </div>
             <button id="order-button" class="white-button">Commander</button>
         </div>
-        <div id="big-container">
-        </div>
 
         <button id="empty-button" class="white-button">Vider le panier</button>
     </div>
     <!-- If cart is empty -->
     <h2 id="empty-cart" class="hidden">Votre panier est vide, <a href="../../index.html">Remplissez le</a></h2>
     <script type="module" src="../js/cart.js"></script>
+    <script type="module" src="../js/form.js"></script>
 </body>
 
 </html>
