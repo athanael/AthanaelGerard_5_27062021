@@ -41,6 +41,7 @@ function getQuantityAndVernis(currentProduct, isFirstTime) {
     // setting default value in localStorage
     if (localStorage.getItem("cart-article") == null) {
       localStorage.setItem("cart-article", "");
+      isFirstTime = true;
     }
     // if its first time open the array of JSON with [
     if (isFirstTime == true) {
