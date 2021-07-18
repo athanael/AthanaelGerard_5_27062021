@@ -25,7 +25,7 @@ function main() {
   sortTab(products, names);
 }
 
-async function sortTab(product, tabNames) {
+function sortTab(product, tabNames) {
   const quantityTab = [];
   // putting right cart quantity in tabNames array
   for (let i = 0; i < tabNames.length; i++) {
