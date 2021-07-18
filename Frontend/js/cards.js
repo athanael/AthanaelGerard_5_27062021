@@ -1,6 +1,6 @@
 let datas = [];
 
-function getCards() {
+async function getCards() {
   // doing the fetch to get data from api URL
   return new Promise((resolve) => {
     fetch("http://localhost:3000/api/furniture")
@@ -23,8 +23,8 @@ function getCards() {
 
 function displayError(error) {
   // display error on website
-  const displayElt = (document.getElementById("error-text").textContent =
-    "Erreur :" + error + " Veuillez vérifier votre connexion internet");
+  document.getElementById("error-text").textContent =
+    "Erreur :" + error + " Veuillez vérifier votre connexion internet";
 }
 
 datas = await getCards();
